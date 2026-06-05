@@ -10,6 +10,11 @@ export default defineConfig({
   // Files to exclude
   exclude: [],
 
+  layers: {
+    "recipes": "panda_recipes",
+    "utilities": "panda_utilities",
+  },
+
   // Useful for theme customization
   theme: {
     extend: {
@@ -18,15 +23,48 @@ export default defineConfig({
           red: {
             value: "#ff0000",
           },
-          blue: {
-            value: "#0000ff",
-          },
-          green: {
-            value: "#00ff00",
-          },
         },
       },
     },
+  },
+
+  themes: {
+    primary: {
+      tokens: {
+        colors: {
+          text: { value: "red" }
+        }
+      },
+      semanticTokens: {
+        colors: {
+          muted: { value: "{colors.red.200}" },
+          body: {
+            value: {
+              base: "{colors.red.600}",
+              _osDark: "{colors.red.400}"
+            }
+          }
+        }
+      }
+    },
+    secondary: {
+      tokens: {
+        colors: {
+          text: { value: "blue" }
+        }
+      },
+      semanticTokens: {
+        colors: {
+          muted: { value: "{colors.blue.200}" },
+          body: {
+            value: {
+              base: "{colors.blue.600}",
+              _osDark: "{colors.blue.400}"
+            }
+          }
+        }
+      }
+    }
   },
 
   // The output directory for your css system

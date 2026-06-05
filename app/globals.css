@@ -1,1 +1,9 @@
+/* 優先順位の定義（上にあるほど弱く、下にあるほど強い） */
 @layer reset, base, tokens, recipes, utilities;
+
+@layer recipes {
+  .btn { background: blue; } 
+}
+@layer utilities {
+  .bg_red { background: red; } 
+}
